@@ -312,8 +312,6 @@ function tick(ts){
 requestAnimationFrame(tick);
 computeScroll();
 
-vids.forEach(v=>{ v.load(); v.addEventListener('loadeddata', ()=>{ if(vids.indexOf(v)===0) v.classList.add('on'); }, {once:true}); });
-
 window.addEventListener('load', ()=> setTimeout(()=>document.getElementById('intro').classList.add('done'), 1500));
 setTimeout(()=>document.getElementById('intro').classList.add('done'), 3200);
 
