@@ -239,7 +239,9 @@
 <script>
 const N = 965;
 const MOBILE = matchMedia('(pointer:coarse)').matches || innerWidth < 820;
-const DIR = 'frames_d'; // haute qualité partout
+const PORTRAIT = innerHeight > innerWidth;
+const DIR = (MOBILE && PORTRAIT) ? 'frames_p' : 'frames_d';
+addEventListener('orientationchange', ()=> setTimeout(()=>location.reload(), 300));
 const cv = document.getElementById('cv');
 const ctx = cv.getContext('2d');
 const imgs = new Array(N+1).fill(null);
