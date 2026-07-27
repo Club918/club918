@@ -239,7 +239,7 @@
 <script>
 const N = 965;
 const MOBILE = matchMedia('(pointer:coarse)').matches || innerWidth < 820;
-const DIR = MOBILE ? 'frames_m' : 'frames_d';
+const DIR = 'frames_d'; // haute qualité partout
 const cv = document.getElementById('cv');
 const ctx = cv.getContext('2d');
 const imgs = new Array(N+1).fill(null);
